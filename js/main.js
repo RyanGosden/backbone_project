@@ -30,24 +30,16 @@ var ArticlesView = Backbone.View.extend({
     this.model.each(function(article){
       var articleView = new ArticleView({model: article});
       self.$el.append(articleView.render().$el);
-      console.log(self.$el);
     });
   }
 
 });
 
-//New instance of article
-//var article = new Article({title: "Single Article"});
-
 //New instances of articles
 var articles = new Articles([
-  new Article({title : "No More Exams"}),
-  new Article({title : "No More Work"})
+  new Article({title : "Tax drops to 15 percent"}),
+  new Article({title : "Work hours reduced to 35 hours per week"})
 ]);
-
-//New Instance of article View
-//var articleView = new ArticleView({model: article});
-//$('#container').html(articleView.render().$el);
 
 //New Instance of articles View
 var articlesView = new ArticlesView({el: "#container", model: articles});
